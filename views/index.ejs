@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sustainable<br>Car Detailing</h1>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p>Contact us on WhatsApp at <a href="tel:+6589892398">+65 8989 2398</a> to book our services or for any inquiries you may have!</p>
+      
+      <div class="services-grid">
+        <% services.forEach(service => { %>
+          <div class="service-card">
+            <img src="<%= service.image %>" alt="<%= service.name %>">
+            <h3><%= service.name %></h3>
+            <p><%= service.description %></p>
+            <a href="/services/<%= service.name.toLowerCase().replace(' ', '-') %>" class="btn">Check this out →</a>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <% faqs.forEach(faq => { %>
+          <details class="faq-item">
+            <summary><%= faq.question %></summary>
+            <p><%= faq.answer %></p>
+          </details>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <h2>Contact Us!</h2>
+      <div class="contact-info">
+        <p><i class="phone-icon"></i> <a href="tel:+6589892020">+65 8989 2020</a></p>
+        <p><i class="email-icon"></i> <a href="mailto:enquiries@shinytomato.com.sg">enquiries@shinytomato.com.sg</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
